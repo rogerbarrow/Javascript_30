@@ -3,70 +3,72 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=`, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Javascript Drumkit</title>
-  <link rel="stylesheet" href="style.css">
+  <title>JS Clock /title>
 </head>
 
 <body>
 
-  <div class="headline">
-    <h1>Javascript DrumKit</h1>
-    <p> Let the party Begin Press the keys on your keyboard to play a sound.</p>
-  </div>
-  <div class="keys">
-    <div data-key="65" class="key">
-      <kbd>A</kbd>
-      <span class="sound">clap</span>
-    </div>
-    <div data-key="83" class="key">
-      <kbd>S</kbd>
-      <span class="sound">hihat</span>
-    </div>
-    <div data-key="68" class="key">
-      <kbd>D</kbd>
-      <span class="sound">kick</span>
-    </div>
-    <div data-key="70" class="key">
-      <kbd>F</kbd>
-      <span class="sound">openhat</span>
-    </div>
-    <div data-key="71" class="key">
-      <kbd>G</kbd>
-      <span class="sound">boom</span>
-    </div>
-    <div data-key="72" class="key">
-      <kbd>H</kbd>
-      <span class="sound">ride</span>
-    </div>
-    <div data-key="74" class="key">
-      <kbd>J</kbd>
-      <span class="sound">snare</span>
-    </div>
-    <div data-key="75" class="key">
-      <kbd>K</kbd>
-      <span class="sound">tom</span>
-    </div>
-    <div data-key="76" class="key">
-      <kbd>L</kbd>
-      <span class="sound">tink</span>
+  <div class="clock">
+    <div class="clock-face">
+      <div class="hand hour-hand"></div>
+      <div class="hand min-hand"></div>
+      <div class="hand second-hand"></div>
     </div>
   </div>
 
-  <audio data-key="65" src="https://archive.org/download/sample_0_201909/clap.mp3"></audio>
-  <audio data-key="83" src="https://archive.org/download/sample_0_201909/hihat.mp3"></audio>
-  <audio data-key="68" src="https://archive.org/download/sample_0_201909/kick.mp3"></audio>
-  <audio data-key="70" src="https://archive.org/download/sample_0_201909/openhat.mp3"></audio>
-  <audio data-key="71" src="https://archive.org/download/sample_0_201909/boom.mp3"></audio>
-  <audio data-key="72" src="https://archive.org/download/sample_0_201909/ride.mp3"></audio>
-  <audio data-key="74" src="https://archive.org/download/sample_0_201909/snare.mp3"></audio>
-  <audio data-key="75" src="https://archive.org/download/sample_0_201909/tom.mp3"></audio>
-  <audio data-key="76" src="https://archive.org/download/sample_0_201909/tink.mp3"></audio>
+
+  <style>
+    html {
+      background: #018DED url(http://unsplash.it/1500/1000?image=881&blur=5);
+      background-size: cover;
+      font-family: 'helvetica neue';
+      text-align: center;
+      font-size: 10px;
+    }
+
+    body {
+      margin: 0;
+      font-size: 2rem;
+      display: flex;
+      flex: 1;
+      min-height: 100vh;
+      align-items: center;
+    }
+
+    .clock {
+      width: 30rem;
+      height: 30rem;
+      border: 20px solid white;
+      border-radius: 50%;
+      margin: 50px auto;
+      position: relative;
+      padding: 2rem;
+      box-shadow:
+        0 0 0 4px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 3px #EFEFEF,
+        inset 0 0 10px black,
+        0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .clock-face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-3px);
+      /* account for the height of the clock hands */
+    }
+
+    .hand {
+      width: 50%;
+      height: 6px;
+      background: black;
+      position: absolute;
+      top: 50%;
+    }
+  </style>
 
 </body>
-
-<script src="app.js"></script>
-
 
 </html>
